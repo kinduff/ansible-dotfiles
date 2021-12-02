@@ -1,0 +1,9 @@
+- name: pacman | install xorg
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xorg
+    - xorg-server

@@ -1,0 +1,62 @@
+# Misc
+dotfiles_user_home: "{{ '~' | expanduser }}"
+dotfiles_home: "{{ dotfiles_user_home }}/dotfiles"
+
+# Meta
+user: "{{ lookup('env', 'USER') }}"
+git_signing_key: "{{ lookup('env','GIT_SIGNING_KEY_ID') }}"
+
+# Packages && apps
+base_packages:
+  - base-devel
+  - binutils
+  - curl
+  - jq
+  - wget
+  - gnupg
+  - fakeroot
+
+official_packages:
+  - bitwarden
+  - discord
+  - firefox
+  - flatpak
+  - httpie
+  - lazygit
+  - neofetch
+  - redis
+  - ttf-fira-code
+  - wireguard-tools
+  - youtube-dl
+  - p7zip
+  - unrar
+  - unzip
+  - xclip
+  - zip
+  - diff-so-fancy
+
+aur_packages:
+  - insomnia-bin
+  - nerd-fonts-hack
+  - obsidian
+  - slack-desktop
+  - ulauncher
+  - visual-studio-code-bin
+  - zoom
+
+# Versions
+ruby:
+  default_version: 3.0.1
+  versions:
+    - 3.0.2
+    - 3.0.1
+    - 2.6.0
+node:
+  default_version: 16.13.0
+  versions:
+    - 16.13.0
+
+# Keys
+gpg_keys:
+  rvm_1: 409B6B1796C275462A1703113804BB82D39DC0E3
+  rvm_2: 7D2BAF1CF37B13E2069D6956105BD0E739499BDB

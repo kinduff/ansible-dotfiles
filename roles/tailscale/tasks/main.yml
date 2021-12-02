@@ -1,0 +1,14 @@
+- name: pacman | install tailscale
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: tailscale
+    state: present
+
+- name: systemd | run tailscale
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    name: tailscaled
+    state: started
+    enabled: yes

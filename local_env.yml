@@ -1,0 +1,20 @@
+- name: Set up desktop environment
+  hosts: local
+  roles:
+    - role: base
+    - role: xorg
+    - role: gnome
+
+- name: Set up development environment
+  hosts: local
+  roles:
+    - role: ssh
+    - role: git
+    - role: yay
+    - role: pacman
+    - role: terminator
+    - role: zsh
+    - role: docker
+    - role: ruby
+    - role: node
+    - role: tailscale

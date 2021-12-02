@@ -1,0 +1,56 @@
+- name: pacman | install deps
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - curl
+    - zsh
+
+- name: command | check current shell
+  command: echo "$SHELL"
+  register: current_shell
+  changed_when: false
+
+- name: command | change shell
+  become: yes
+  become_user: root
+  command: chsh -s /bin/zsh {{ lookup('env', 'USER') }}
+  when: current_shell == "/bin/zsh"
+
+- name: stat | .oh-my-zsh
+  stat:
+    path: "{{ dotfiles_user_home }}/.oh-my-zsh"
+  register: oh_my_zsh_stat
+
+- name: git | clone oh-my-zsh
+  ansible.builtin.git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "{{ dotfiles_user_home }}/.oh-my-zsh"
+  when: not oh_my_zsh_stat.stat.exists
+
+- name: file | link .zshrc file
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/zshrc.link"
+    dest: "{{ dotfiles_user_home }}/.zshrc"
+    state: link
+    force: yes
+
+- name: file | link .aliases file
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/aliases.link"
+    dest: "{{ dotfiles_user_home }}/.aliases"
+    state: link
+    force: yes
+
+- name: stat | plugin zsh-syntax-highlighting
+  stat:
+    path: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  register: zsh_syntax_highlighting_stat
+
+- name: git | installs zsh-syntax-highlighting
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  when: not zsh_syntax_highlighting_stat.stat.exists

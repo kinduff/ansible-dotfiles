@@ -1,0 +1,55 @@
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  pushf = push --force-with-lease
+[user]
+  name = {{ git_user }}
+  email = {{ git_email }}
+{% if git_signing_key %}
+  signingkey = {{ git_signing_key }}
+{% endif %}
+[core]
+  askPass = git-gui--askpass
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes_global
+  editor = vim
+[gpg]
+  program = /usr/bin/gpg
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[init]
+  defaultBranch = master
+{% if git_signing_key %}
+[commit]
+  gpgsign = true
+{% endif %}
+[format]
+  signOff = yes
+[credential]
+  helper = store
+[pull]
+  rebase = true
+[github]
+  user = {{ git_user }}

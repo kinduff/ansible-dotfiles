@@ -1,0 +1,3 @@
+alias c="clear"
+alias q="exit"
+alias vi="vim"

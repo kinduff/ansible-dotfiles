@@ -1,0 +1,7 @@
+.env
+.autoenv
+.autoenv.zsh
+.ropeproject
+.session
+.vimrc
+.vscode

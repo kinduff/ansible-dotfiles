@@ -1,0 +1,31 @@
+- name: pacman | install gnome and tools
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - gnome-shell
+    - gnome-control-center
+    - gnome-keyring
+    - gnome-tweak-tool
+    - nautilus
+    - xdg-user-dirs
+    - networkmanager
+    - gdm
+
+- name: systemd | run gdm
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    name: gdm
+    state: started
+    enabled: yes
+
+- name: systemd | run NetworkManager
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    name: NetworkManager
+    state: started
+    enabled: yes
