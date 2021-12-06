@@ -16,4 +16,3 @@
     dest: "{{ dotfiles_user_home }}/.config/terminator/config"
     state: link
     force: yes
-    follow: false

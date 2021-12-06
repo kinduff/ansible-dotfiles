@@ -18,189 +18,39 @@
   include_role:
     name: petermosmans.customize-gnome
   vars:
+    gnome_user: kinduff
     gnome_extensions:
       # dash-to-panel@jderose9.github.com
       - id: 1160
-        enabled: yes
+        enable: yes
       # arch-update@RaphaelRochet
       - id: 1010
-        enabled: yes
+        enable: yes
       # appindicatorsupport@rgcjonas.gmail.com
       - id: 615
         enable: yes
       # argos@pew.worldwidemann.com
-      - url: https://github.com/mwilck/argos/archive/refs/heads/master.zip
-        name: argos@pew.worldwidemann.com
-        enable: yes
+      # - url: https://github.com/mwilck/argos/archive/refs/heads/master.zip
+      #   name: argos@pew.worldwidemann.com
+      #   enable: yes
       # panel-osd@berend.de.schouwer.gmail.com
       - id: 708
-        enabled: yes
+        enable: yes
       # shell-volume-mixer@derhofbauer.at
       - id: 858
-        enabled: yes
+        enable: yes
       # user-theme@gnome-shell-extensions.gcampax.github.com
       - id: 19
-        enabled: yes
+        enable: yes
       # windowIsReady_Remover@nunofarruca@gmail.com
       - id: 1007
-        enabled: yes
+        enable: yes
       # wireguard-indicator@atareao.es
       - id: 3612
-        enabled: yes
+        enable: yes
       # screenshotlocations.timur@linux.com
       - id: 1179
-        enabled: yes
-
-    gnome_dconf:
-      # Arch update
-      - key: /org/gnome/shell/extensions/arch-update/check-cmd
-        value: "/bin/sh -c \"(/usr/bin/checkupdates; /usr/bin/yay -Qqu --color never | sed 's/Get .*//') | sort -u -t' ' -k1,1\""
-      - key: /org/gnome/shell/extensions/arch-update/position
-        value: 2
-      - key: /org/gnome/shell/extensions/arch-update/update-cmd
-        value: "terminator -e 'sh -c \"yay ; echo Done - Press enter to exit; read\" '"
-      - key: /org/gnome/shell/extensions/arch-update/use-buildin-icons
-        value: false
-
-      # Screenshot locations
-      - key: /org/gnome/shell/extensions/screenshotlocations/save-directory
-        value: "{{ dotfiles_home }}/Pictures/screenshots"
-
-      # Shell Volume Mixer
-      - key: /org/gnome/shell/extensions/shell-volume-mixer/position
-        value: 'aggregateMenu'
-      - key: /org/gnome/shell/extensions/shell-volume-mixer/use-symbolic-icons
-        value: true
-
-      # User theme
-      - key: /org/gnome/shell/extensions/user-theme
-        value: 'Nordic-darker'
-
-      # Dash to panel
-      - key: /org/gnome/shell/extensions/dash-to-panel/animate-appicon-hover
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/appicon-margin
-        value: 0
-      - key: /org/gnome/shell/extensions/dash-to-panel/appicon-padding
-        value: 8
-      - key: /org/gnome/shell/extensions/dash-to-panel/available-monitors
-        value: [1, 0]
-      - key: /org/gnome/shell/extensions/dash-to-panel/check-update
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-1
-        value: '#5294e2'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-2
-        value: '#5294e2'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-3
-        value: '#5294e2'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-4
-        value: '#5294e2'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-color-dominant
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-position
-        value: 'TOP'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-size
-        value: 3
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-focused
-        value: 'DOTS'
-      - key: /org/gnome/shell/extensions/dash-to-panel/dot-style-unfocused
-        value: 'DOTS'
-      - key: /org/gnome/shell/extensions/dash-to-panel/focus-highlight
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/focus-highlight-dominant
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/focus-highlight-opacity
-        value: 15
-      - key: /org/gnome/shell/extensions/dash-to-panel/force-check-update
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-label-font-color
-        value: '#dddddd'
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-label-font-color-minimized
-        value: '#dddddd'
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-label-font-size
-        value: 14
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-label-font-weight
-        value: 'inherit'
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-label-max-width
-        value: 0
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-underline-unfocused
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-use-fixed-width
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/group-apps-use-launchers
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/hotkeys-overlay-combo
-        value: 'TEMPORARILY'
-      - key: /org/gnome/shell/extensions/dash-to-panel/isolate-monitors
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/leftbox-padding
-        value: -1
-      - key: /org/gnome/shell/extensions/dash-to-panel/leftbox-size
-        value: 0
-      - key: /org/gnome/shell/extensions/dash-to-panel/multi-monitors
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-anchors
-        value: '{"0":"MIDDLE","1":"MIDDLE"}'
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-element-positions
-        value: '{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"centerMonitor"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-element-positions-monitors-sync
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-lengths
-        value: '{"0":100,"1":100}'
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-positions
-        value: '{"0":"TOP","1":"TOP"}'
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-size
-        value: 32
-      - key: /org/gnome/shell/extensions/dash-to-panel/panel-sizes
-        value: '{"0":32,"1":32}'
-      - key: /org/gnome/shell/extensions/dash-to-panel/primary-monitor
-        value: 0
-      - key: /org/gnome/shell/extensions/dash-to-panel/scroll-panel-action
-        value: 'NOTHING'
-      - key: /org/gnome/shell/extensions/dash-to-panel/secondarymenu-contains-appmenu
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/secondarymenu-contains-showdetails
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-appmenu
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-running-apps
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-tooltip
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/show-window-previews
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/status-icon-padding
-        value: -1
-      - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-dash
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-keep-top-panel
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/stockgs-panelbtn-click-only
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/taskbar-locked
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-dynamic-anim-target
-        value: 0.5
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-dynamic-behavior
-        value: 'MAXIMIZED_WINDOWS'
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-dynamic-distance
-        value: 5
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-panel-opacity
-        value: 0.0
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-bg
-        value: false
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-custom-opacity
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/trans-use-dynamic-opacity
-        value: true
-      - key: /org/gnome/shell/extensions/dash-to-panel/tray-padding
-        value: -1
-      - key: /org/gnome/shell/extensions/dash-to-panel/tray-size
-        value: 0
-      - key: /org/gnome/shell/extensions/dash-to-panel/window-preview-title-position
-        value: 'TOP'
+        enable: yes
 
 - name: systemd | run gdm
   become: yes
