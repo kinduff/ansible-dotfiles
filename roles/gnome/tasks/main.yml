@@ -29,3 +29,11 @@
     name: NetworkManager
     state: started
     enabled: yes
+
+- name: systemd | run bluetooth
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    name: bluetooth
+    state: started
+    enabled: yes
