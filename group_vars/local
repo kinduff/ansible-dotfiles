@@ -38,6 +38,7 @@ official_packages:
   - zip
 
 aur_packages:
+  - chrome-gnome-shell
   - insomnia-bin
   - nerd-fonts-hack
   - obsidian
