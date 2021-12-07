@@ -28,18 +28,12 @@
       # argos@pew.worldwidemann.com
       # - url: https://github.com/mwilck/argos/archive/refs/heads/master.zip
       #   name: argos@pew.worldwidemann.com
-      # panel-osd@berend.de.schouwer.gmail.com
-      - 708
       # shell-volume-mixer@derhofbauer.at
       - 858
       # user-theme@gnome-shell-extensions.gcampax.github.com
       - 19
       # windowIsReady_Remover@nunofarruca@gmail.com
       - 1007
-      # wireguard-indicator@atareao.es
-      - 3612
-      # screenshotlocations.timur@linux.com
-      - 1179
 
 - name: systemd | run gdm
   become: yes
