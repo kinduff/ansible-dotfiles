@@ -4,6 +4,7 @@
     - role: base
     - role: xorg
     - role: gnome
+    - role: argos
 
 - name: Set up development environment
   hosts: local

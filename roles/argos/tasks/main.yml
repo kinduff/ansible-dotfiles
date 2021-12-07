@@ -1,0 +1,26 @@
+- name: stat | .local/share/gnome-shell/extensions/argos@pew.worldwidemann.com
+  stat:
+    path: "{{ dotfiles_user_home }}/.local/share/gnome-shell/extensions/argos@pew.worldwidemann.com"
+  register: argos_extension_stat
+
+- name: stat | .config/argos
+  stat:
+    path: "{{ dotfiles_user_home }}/.config/argos"
+  register: argos_stat
+
+- name: unarchive | download argos
+  ansible.builtin.unarchive:
+    src: https://github.com/mwilck/argos/archive/refs/heads/master.zip
+    dest: /tmp
+    remote_src: yes
+  when: not argos_extension_stat.stat.exists
+
+- name: command | mv argos to extension folder
+  command: "mv /tmp/argos-master/argos@pew.worldwidemann.com {{ dotfiles_user_home }}/.local/share/gnome-shell/extensions/"
+  when: not argos_extension_stat.stat.exists
+
+- name: git | clone kinduff/argos-plugins
+  ansible.builtin.git:
+    repo: https://github.com/kinduff/argos-plugins.git
+    dest: "{{ dotfiles_user_home }}/.config/argos"
+  when: not argos_stat.stat.exists
