@@ -24,8 +24,10 @@ official_packages:
   - discord
   - firefox
   - flatpak
+  - gnome-shell-extension-appindicator
   - httpie
   - lazygit
+  - libappindicator-gtk3
   - neofetch
   - p7zip
   - redis
