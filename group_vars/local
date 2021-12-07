@@ -11,31 +11,34 @@ base_packages:
   - base-devel
   - binutils
   - curl
-  - jq
-  - wget
-  - gnupg
   - fakeroot
+  - gnupg
+  - jq
+  - pacman-contrib
+  - wget
 
 official_packages:
   - bitwarden
+  - dconf-editor
+  - diff-so-fancy
   - discord
   - firefox
   - flatpak
   - httpie
   - lazygit
   - neofetch
+  - p7zip
   - redis
   - ttf-fira-code
-  - wireguard-tools
-  - youtube-dl
-  - p7zip
   - unrar
   - unzip
+  - wireguard-tools
   - xclip
+  - youtube-dl
   - zip
-  - diff-so-fancy
 
 aur_packages:
+  - chrome-gnome-shell
   - insomnia-bin
   - nerd-fonts-hack
   - obsidian

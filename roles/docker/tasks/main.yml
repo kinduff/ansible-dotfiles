@@ -26,5 +26,4 @@
   become_user: root
   ansible.builtin.systemd:
     name: docker
-    state: started
     enabled: yes
