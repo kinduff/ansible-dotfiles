@@ -28,6 +28,22 @@
 
 # gsettings set org.gnome.mutter overlay-key ""
 
+- name: lineinfile | disable wayland for gdm
+  become: yes
+  become_user: root
+  ansible.builtin.lineinfile:
+    path: /etc/gdm/custom.conf
+    search_string: "#WaylandEnable=false"
+    line: WaylandEnable=false
+
+- name: command | set xorg as default
+  become: yes
+  become_user: root
+  ansible.builtin.lineinfile:
+    path: /etc/gdm/custom.conf
+    insertafter: "WaylandEnable=false"
+    line: DefaultSession=gnome-xorg.desktop
+
 - name: systemd | run gdm
   become: yes
   become_user: root
