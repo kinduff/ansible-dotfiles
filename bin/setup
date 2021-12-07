@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! [ -x "$(command -v ansible)" ]; then
+  sudo pacman -Sy --needed ansible
+fi
+
+ansible-galaxy install -r requirements.yml
