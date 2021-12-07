@@ -35,6 +35,8 @@
       # windowIsReady_Remover@nunofarruca@gmail.com
       - 1007
 
+# gsettings set org.gnome.mutter overlay-key ""
+
 - name: systemd | run gdm
   become: yes
   become_user: root
