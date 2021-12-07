@@ -29,6 +29,7 @@ official_packages:
   - lazygit
   - libappindicator-gtk3
   - neofetch
+  - noto-fonts-emoji
   - p7zip
   - redis
   - ttf-fira-code
