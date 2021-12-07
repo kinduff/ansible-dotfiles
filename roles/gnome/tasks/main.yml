@@ -19,21 +19,12 @@
     name: jaredhocutt.gnome_extensions
   vars:
     gnome_extension_ids:
-      # dash-to-panel@jderose9.github.com
-      - 1160
-      # arch-update@RaphaelRochet
-      - 1010
-      # appindicatorsupport@rgcjonas.gmail.com
-      - 615
-      # argos@pew.worldwidemann.com
-      # - url: https://github.com/mwilck/argos/archive/refs/heads/master.zip
-      #   name: argos@pew.worldwidemann.com
-      # shell-volume-mixer@derhofbauer.at
-      - 858
-      # user-theme@gnome-shell-extensions.gcampax.github.com
-      - 19
-      # windowIsReady_Remover@nunofarruca@gmail.com
-      - 1007
+      - 1160 # dash-to-panel@jderose9.github.com
+      - 1010 # arch-update@RaphaelRochet
+      - 615 # appindicatorsupport@rgcjonas.gmail.com
+      - 858 # shell-volume-mixer@derhofbauer.at
+      - 19 # user-theme@gnome-shell-extensions.gcampax.github.com
+      - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
 
 # gsettings set org.gnome.mutter overlay-key ""
 
