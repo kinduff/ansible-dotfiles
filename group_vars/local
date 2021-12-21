@@ -46,7 +46,6 @@ aur_packages:
   - nerd-fonts-hack
   - obsidian
   - plexamp-appimage
-  - ulauncher
   - visual-studio-code-bin
   - zoom
 

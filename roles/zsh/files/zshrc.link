@@ -10,9 +10,10 @@ plugins=(
   zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-source ~/.aliases
+source $HOME/.aliases
 
-export PATH=~/.npm-global/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
