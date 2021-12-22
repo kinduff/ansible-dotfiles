@@ -1,0 +1,9 @@
+- name: pacman | install dconf-editor
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: dconf-editor
+    state: present
+
+- name: dconf | restores config
+  shell: "dconf load / < {{ dotfiles_home }}/roles/dconf/files/dconf.conf"

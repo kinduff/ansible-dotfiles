@@ -19,7 +19,6 @@ base_packages:
 
 official_packages:
   - bitwarden
-  - dconf-editor
   - diff-so-fancy
   - discord
   - firefox
