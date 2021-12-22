@@ -15,6 +15,7 @@
     - role: pacman
     - role: terminator
     - role: zsh
+    - role: rofi
     - role: docker
     - role: ruby
     - role: node

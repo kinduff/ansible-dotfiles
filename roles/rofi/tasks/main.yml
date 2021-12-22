@@ -1,0 +1,13 @@
+- name: pacman | install rofi
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: rofi
+    state: present
+
+- name: file | link rofi config file
+  file:
+    src: "{{ dotfiles_home }}/roles/rofi/files/config.rasi.link"
+    dest: "{{ dotfiles_user_home }}/.config/rofi/config.rasi"
+    state: link
+    force: yes
