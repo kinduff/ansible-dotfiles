@@ -25,6 +25,7 @@
       - 858 # shell-volume-mixer@derhofbauer.at
       - 19 # user-theme@gnome-shell-extensions.gcampax.github.com
       - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
+      - 1040 # randomwallpaper@iflow.space
 
 # gsettings set org.gnome.mutter overlay-key ""
 
