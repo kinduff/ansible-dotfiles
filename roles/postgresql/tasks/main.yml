@@ -1,0 +1,25 @@
+- name: pacman | install postgresql
+  become: yes
+  become_user: root
+  community.general.pacman:
+    name: postgresql
+    state: present
+
+- name: Find out if PostgreSQL is initialized
+  ansible.builtin.stat:
+    path: "/var/lib/postgres/data"
+  register: postgres_data
+
+- name: Initialize PostgreSQL
+  become: yes
+  become_user: postgres
+  shell: "initdb -D /var/lib/postgres/data"
+  when: not postgres_data.stat.exists
+
+- name: systemd | run postgresql
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    name: postgresql
+    state: started
+    enabled: yes

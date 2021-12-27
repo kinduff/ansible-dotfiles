@@ -20,3 +20,4 @@
     - role: ruby
     - role: node
     - role: tailscale
+    - role: postgresql
