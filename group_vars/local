@@ -44,6 +44,7 @@ aur_packages:
   - insomnia-bin
   - nerd-fonts-hack
   - obsidian
+  - overmind-bin
   - plexamp-appimage
   - visual-studio-code-bin
   - zoom
