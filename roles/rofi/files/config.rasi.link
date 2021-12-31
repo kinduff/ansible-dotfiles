@@ -1,6 +1,16 @@
 configuration {
-  modi: "window,drun,combi";
-  combi-modi: "window,drun";
+  modi: [drun];
+  font: "Fira Code 12";
+  width: 30;
+  line-margin: 10;
+  lines: 6;
+  columns: 2;
+  display-ssh:    "";
+  display-run:    "";
+  display-drun:   "";
+  display-window: "";
+  display-combi:  "";
+  show-icons:     true;
 }
 
-@theme "dmenu"
+@theme "~/.config/rofi/theme.rasi"

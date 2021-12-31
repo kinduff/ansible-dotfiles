@@ -11,3 +11,10 @@
     dest: "{{ dotfiles_user_home }}/.config/rofi/config.rasi"
     state: link
     force: yes
+
+- name: file | link rofi theme file
+  file:
+    src: "{{ dotfiles_home }}/roles/rofi/files/theme.rasi.link"
+    dest: "{{ dotfiles_user_home }}/.config/rofi/theme.rasi"
+    state: link
+    force: yes
