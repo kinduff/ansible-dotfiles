@@ -25,6 +25,7 @@ official_packages:
   - flatpak
   - gnome-shell-extension-appindicator
   - httpie
+  - imagemagick
   - lazygit
   - libappindicator-gtk3
   - neofetch
