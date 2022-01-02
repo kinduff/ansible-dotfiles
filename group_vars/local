@@ -21,6 +21,7 @@ official_packages:
   - bitwarden
   - diff-so-fancy
   - discord
+  - element-desktop
   - firefox
   - flatpak
   - gnome-shell-extension-appindicator
