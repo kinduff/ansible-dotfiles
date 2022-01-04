@@ -3,13 +3,13 @@
     path: "{{ dotfiles_user_home }}/.ssh"
     state: directory
 
-- name: Fetch github.com RSA key
-  command: ssh-keyscan -t rsa github.com
+- name: command | fetch github.com RSA key
+  ansible.builtin.command: ssh-keyscan -t rsa github.com
   register: github_rsa_key
   changed_when: false
 
-- name: Add github.com RSA key
-  known_hosts:
+- name: known_hosts | Add github.com RSA key
+  ansible.builtin.known_hosts:
     name: github.com
     key: "{{ github_rsa_key.stdout }}"
     path: "{{ dotfiles_user_home }}/.ssh/known_hosts"

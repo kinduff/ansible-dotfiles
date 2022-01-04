@@ -27,8 +27,6 @@
       - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
       - 1040 # randomwallpaper@iflow.space
 
-# gsettings set org.gnome.mutter overlay-key ""
-
 - name: lineinfile | disable wayland for gdm
   become: yes
   become_user: root
@@ -37,7 +35,7 @@
     search_string: "#WaylandEnable=false"
     line: WaylandEnable=false
 
-- name: command | set xorg as default
+- name: lineinfile | set xorg as default
   become: yes
   become_user: root
   ansible.builtin.lineinfile:
@@ -68,3 +66,26 @@
     name: bluetooth
     state: started
     enabled: yes
+
+- name: file | creates .themes directory
+  ansible.builtin.file:
+    path: "{{ dotfiles_user_home }}/.themes"
+    state: directory
+
+- name: stat | .themes/Nordic
+  stat:
+    path: "{{ dotfiles_user_home }}/.themes/Nordic"
+  register: nordic_stat
+
+- name: unarchive | Nordic theme
+  ansible.builtin.unarchive:
+    src: https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
+    dest: "{{ dotfiles_user_home }}/.themes"
+    remote_src: yes
+  when: not nordic_stat.stat.exists
+
+- name: command | rename Nordic folder
+  ansible.builtin.command: "mv {{ dotfiles_user_home }}/.themes/Nordic-master {{ dotfiles_user_home }}/.themes/Nordic"
+  args:
+    creates: "{{ dotfiles_user_home }}/.themes/Nordic"
+  when: not nordic_stat.stat.exists

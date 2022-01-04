@@ -1,5 +1,5 @@
 - name: Register yay installation status
-  command: which yay
+  ansible.builtin.command: which yay
   changed_when: false
   failed_when: false
   register: yay_installed
