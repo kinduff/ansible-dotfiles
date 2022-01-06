@@ -1,6 +1,6 @@
 configuration {
   modi: [drun];
-  font: "Fira Code 12";
+  font: "Cantarell 12";
   width: 30;
   line-margin: 10;
   lines: 6;
