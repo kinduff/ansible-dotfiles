@@ -89,3 +89,14 @@
   args:
     creates: "{{ dotfiles_user_home }}/.themes/Nordic"
   when: not nordic_stat.stat.exists
+
+- name: unarchive | Tela icons
+  ansible.builtin.unarchive:
+    src: https://github.com/vinceliuice/Tela-icon-theme/archive/refs/heads/master.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: command | install Tela icons
+  ansible.builtin.command: "sh /tmp/Tela-icon-theme-master/install.sh"
+  args:
+    creates: "{{ dotfiles_user_home }}/.local/share/icons/Tela"
