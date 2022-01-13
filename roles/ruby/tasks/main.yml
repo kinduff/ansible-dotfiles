@@ -1,11 +1,11 @@
 - name: gpg | check for rvm_1
-  shell: "gpg --list-keys | grep -w {{ gpg_keys.rvm_1 }}"
+  shell: "grep -w {{ gpg_keys.rvm_1 }} <(gpg --list-keys)"
   register: rvm_1_exist
   changed_when: false
   failed_when: rvm_1_exist.rc not in [ 0, 1 ]
 
 - name: gpg | check for rvm_2
-  shell: "gpg --list-keys | grep -w {{ gpg_keys.rvm_2 }}"
+  shell: "grep -w {{ gpg_keys.rvm_2 }} <(gpg --list-keys)"
   register: rvm_2_exist
   changed_when: false
   failed_when: rvm_2_exist.rc not in [ 0, 1 ]
@@ -18,8 +18,13 @@
   command: "gpg2 --recv-keys {{ gpg_keys.rvm_2 }}"
   when: rvm_2_exist.rc == 1
 
-- name: shell | curl rvm installer
-  shell: curl -sSL https://get.rvm.io | bash -s stable
+- name: get_url | download rvm installer
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
+    dest: /tmp/rvm-installer.sh
+
+- name: shell | execute rvm installer
+  command: /tmp/rvm-installer.sh -s stable
   args:
     creates: "{{ dotfiles_user_home }}/.rvm"
 
@@ -39,4 +44,4 @@
     src: "{{ dotfiles_home }}/roles/ruby/files/gemrc.link"
     dest: "{{ dotfiles_user_home }}/.gemrc"
     state: link
-    force: yes
+    force: true

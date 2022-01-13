@@ -1,11 +1,11 @@
 - name: pacman | update cache
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
-    update_cache: yes
+    update_cache: true
 
 - name: pacman | install tools
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: "{{ item }}"

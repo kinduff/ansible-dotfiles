@@ -1,5 +1,5 @@
 - name: pacman | install deps
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: "{{ item }}"
@@ -14,7 +14,7 @@
   changed_when: false
 
 - name: command | change shell
-  become: yes
+  become: true
   become_user: root
   command: chsh -s /bin/zsh {{ lookup('env', 'USER') }}
   when: current_shell == "/bin/zsh"
@@ -35,14 +35,14 @@
     src: "{{ dotfiles_home }}/roles/zsh/files/zshrc.link"
     dest: "{{ dotfiles_user_home }}/.zshrc"
     state: link
-    force: yes
+    force: true
 
 - name: file | link .aliases file
   file:
     src: "{{ dotfiles_home }}/roles/zsh/files/aliases.link"
     dest: "{{ dotfiles_user_home }}/.aliases"
     state: link
-    force: yes
+    force: true
 
 - name: stat | plugin zsh-syntax-highlighting
   stat:

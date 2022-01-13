@@ -1,5 +1,5 @@
 - name: pacman | install xorg
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: "{{ item }}"

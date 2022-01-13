@@ -1,5 +1,5 @@
 - name: pacman | install terminator
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: terminator
@@ -9,10 +9,11 @@
   ansible.builtin.file:
     path: "{{ dotfiles_user_home }}/.config/terminator"
     state: directory
+    mode: 0644
 
 - name: file | link config file
   ansible.builtin.file:
     src: "{{ dotfiles_home }}/roles/terminator/files/config.link"
     dest: "{{ dotfiles_user_home }}/.config/terminator/config"
     state: link
-    force: yes
+    force: true

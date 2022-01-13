@@ -1,5 +1,5 @@
 - name: pacman | install rofi
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: rofi
@@ -10,11 +10,11 @@
     src: "{{ dotfiles_home }}/roles/rofi/files/config.rasi.link"
     dest: "{{ dotfiles_user_home }}/.config/rofi/config.rasi"
     state: link
-    force: yes
+    force: true
 
 - name: file | link rofi theme file
   file:
     src: "{{ dotfiles_home }}/roles/rofi/files/theme.rasi.link"
     dest: "{{ dotfiles_user_home }}/.config/rofi/theme.rasi"
     state: link
-    force: yes
+    force: true

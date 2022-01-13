@@ -12,7 +12,7 @@
   ansible.builtin.unarchive:
     src: https://github.com/mwilck/argos/archive/refs/heads/master.zip
     dest: /tmp
-    remote_src: yes
+    remote_src: true
   when: not argos_extension_stat.stat.exists
 
 - name: command | mv argos to extension folder

@@ -2,6 +2,7 @@
   ansible.builtin.file:
     path: "{{ dotfiles_user_home }}/.ssh"
     state: directory
+    mode: 0644
 
 - name: command | fetch github.com RSA key
   ansible.builtin.command: ssh-keyscan -t rsa github.com

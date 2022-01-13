@@ -1,5 +1,10 @@
-- name: shell | curl nvm installer
-  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+- name: get_url | download nvm installer
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+    dest: /tmp/nvm-installer.sh
+
+- name: command | execute nvm installer
+  command: /tmp/nvm-installer.sh
   args:
     creates: "{{ dotfiles_user_home }}/.nvm"
 

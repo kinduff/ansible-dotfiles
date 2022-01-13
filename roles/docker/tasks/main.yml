@@ -1,5 +1,5 @@
 - name: pacman | install docker
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: "{{ item }}"
@@ -14,16 +14,16 @@
     state: present
 
 - name: Add the user {{ user }} to group docker
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.user:
     name: "{{ user }}"
     groups: docker
-    append: yes
+    append: true
 
 - name: systemd | run docker
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.systemd:
     name: docker
-    enabled: yes
+    enabled: true

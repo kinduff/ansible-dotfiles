@@ -5,21 +5,21 @@
   register: yay_installed
 
 - name: Create the `aur_builder` user
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.user:
     name: aur_builder
-    create_home: yes
+    create_home: true
     group: wheel
 
 - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
-    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
-    create: yes
-    validate: 'visudo -cf %s'
+    line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+    create: true
+    validate: "visudo -cf %s"
 
 - name: git | clone yay
   ansible.builtin.git:
@@ -28,7 +28,7 @@
   when: yay_installed.rc not in [0]
 
 - name: Install yay-bin using makepkg and a local PKGBUILD.
-  become: yes
+  become: true
   become_user: aur_builder
   kewlfft.aur.aur:
     name: yay-bin
@@ -38,7 +38,7 @@
   when: yay_installed.rc not in [0]
 
 - name: yay | install tools
-  become: yes
+  become: true
   become_user: aur_builder
   kewlfft.aur.aur:
     use: yay
@@ -47,15 +47,15 @@
   with_items: "{{ aur_packages }}"
 
 - name: Delete the `aur_builder` user
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.user:
     name: aur_builder
     state: absent
-    remove: yes
+    remove: true
 
 - name: Remove aur_builder sudoer file
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.file:
     path: /etc/sudoers.d/11-install-aur_builder

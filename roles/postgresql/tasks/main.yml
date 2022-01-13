@@ -1,5 +1,5 @@
 - name: pacman | install postgresql
-  become: yes
+  become: true
   become_user: root
   community.general.pacman:
     name: postgresql
@@ -11,14 +11,14 @@
   register: postgres_data
 
 - name: Initialize PostgreSQL
-  become: yes
+  become: true
   become_user: postgres
-  shell: "initdb -D /var/lib/postgres/data"
+  command: "initdb -D /var/lib/postgres/data"
   when: not postgres_data.stat.exists
 
 - name: systemd | run postgresql
-  become: yes
+  become: true
   become_user: root
   ansible.builtin.systemd:
     name: postgresql
-    enabled: yes
+    enabled: true
