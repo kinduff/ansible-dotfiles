@@ -1,7 +1,7 @@
 SAVEHIST=100000
 EDITOR=vim
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="eastwood"
 plugins=(
   archlinux
   git
