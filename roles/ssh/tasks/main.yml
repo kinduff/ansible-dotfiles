@@ -1,3 +1,4 @@
+---
 - name: file | link config file
   ansible.builtin.file:
     path: "{{ dotfiles_user_home }}/.ssh"

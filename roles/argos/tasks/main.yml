@@ -1,3 +1,4 @@
+---
 - name: stat | .local/share/gnome-shell/extensions/argos@pew.worldwidemann.com
   stat:
     path: "{{ dotfiles_user_home }}/.local/share/gnome-shell/extensions/argos@pew.worldwidemann.com"
@@ -16,7 +17,8 @@
   when: not argos_extension_stat.stat.exists
 
 - name: command | mv argos to extension folder
-  command: "mv /tmp/argos-master/argos@pew.worldwidemann.com {{ dotfiles_user_home }}/.local/share/gnome-shell/extensions/"
+  command:
+    "mv /tmp/argos-master/argos@pew.worldwidemann.com {{ dotfiles_user_home }}/.local/share/gnome-shell/extensions/"
   when: not argos_extension_stat.stat.exists
 
 - name: git | clone kinduff/argos-plugins

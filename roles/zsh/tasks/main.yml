@@ -1,3 +1,4 @@
+---
 - name: pacman | install deps
   become: true
   become_user: root

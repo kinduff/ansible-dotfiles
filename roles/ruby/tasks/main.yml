@@ -1,3 +1,4 @@
+---
 - name: gpg | check for rvm_1
   shell: "grep -w {{ gpg_keys.rvm_1 }} <(gpg --list-keys)"
   register: rvm_1_exist

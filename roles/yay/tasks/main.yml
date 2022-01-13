@@ -1,3 +1,4 @@
+---
 - name: Register yay installation status
   ansible.builtin.command: which yay
   changed_when: false
