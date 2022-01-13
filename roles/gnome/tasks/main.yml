@@ -48,7 +48,6 @@
   become_user: root
   ansible.builtin.systemd:
     name: gdm
-    state: started
     enabled: yes
 
 - name: systemd | run NetworkManager
@@ -56,7 +55,6 @@
   become_user: root
   ansible.builtin.systemd:
     name: NetworkManager
-    state: started
     enabled: yes
 
 - name: systemd | run bluetooth
@@ -64,7 +62,6 @@
   become_user: root
   ansible.builtin.systemd:
     name: bluetooth
-    state: started
     enabled: yes
 
 - name: file | creates .themes directory

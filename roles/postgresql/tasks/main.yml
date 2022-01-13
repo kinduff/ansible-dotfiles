@@ -21,5 +21,4 @@
   become_user: root
   ansible.builtin.systemd:
     name: postgresql
-    state: started
     enabled: yes
