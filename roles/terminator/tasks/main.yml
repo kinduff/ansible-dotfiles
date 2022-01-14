@@ -10,7 +10,6 @@
   ansible.builtin.file:
     path: "{{ dotfiles_user_home }}/.config/terminator"
     state: directory
-    mode: 0644
 
 - name: file | link config file
   ansible.builtin.file:

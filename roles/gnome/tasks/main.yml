@@ -69,7 +69,6 @@
   ansible.builtin.file:
     path: "{{ dotfiles_user_home }}/.themes"
     state: directory
-    mode: 0644
 
 - name: stat | .themes/Nordic
   stat:
@@ -89,13 +88,20 @@
     creates: "{{ dotfiles_user_home }}/.themes/Nordic"
   when: not nordic_stat.stat.exists
 
+- name: stat | .local/share/icons/Tela
+  stat:
+    path: "{{ dotfiles_user_home }}/.local/share/icons/Tela"
+  register: tela_stat
+
 - name: unarchive | Tela icons
   ansible.builtin.unarchive:
     src: https://github.com/vinceliuice/Tela-icon-theme/archive/refs/heads/master.zip
     dest: /tmp
     remote_src: true
+  when: not tela_stat.stat.exists
 
 - name: command | install Tela icons
   ansible.builtin.command: "sh /tmp/Tela-icon-theme-master/install.sh"
   args:
     creates: "{{ dotfiles_user_home }}/.local/share/icons/Tela"
+  when: not tela_stat.stat.exists
