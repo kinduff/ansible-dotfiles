@@ -27,6 +27,7 @@
       - 19    # user-theme@gnome-shell-extensions.gcampax.github.com
       - 1007  # windowIsReady_Remover@nunofarruca@gmail.com
       - 1040  # randomwallpaper@iflow.space
+      - 2741  # remove-alt-tab-delay@daase.net
 
 - name: lineinfile | disable wayland for gdm
   become: true
