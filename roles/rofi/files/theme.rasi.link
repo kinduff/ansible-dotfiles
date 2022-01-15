@@ -1,129 +1,102 @@
-/**
-* Nordic rofi theme
-* Adapted by undiabler <undiabler@gmail.com>
-*
-* Nord Color palette imported from https://www.nordtheme.com/
-*
-*/
+/*******************************************************************************
+ * SPOTLIGHT LIKE DARK THEME FOR ROFI
+ * User                 : LR-Tech
+ *******************************************************************************/
 
 * {
-  nord0: #2e3440;
-  nord1: #3b4252;
-  nord2: #434c5e;
-  nord3: #4c566a;
+  font: "Montserrat 12";
 
-  nord4: #d8dee9;
-  nord5: #e5e9f0;
-  nord6: #eceff4;
+  bg0: #242424e6;
+  bg1: #7e7e7e80;
+  bg2: #0860f2e6;
 
-  nord7: #8fbcbb;
-  nord8: #88c0d0;
-  nord9: #81a1c1;
-  nord10: #5e81ac;
-  nord11: #bf616a;
+  fg0: #dedede;
+  fg1: #ffffff;
+  fg2: #dedede80;
 
-  nord12: #d08770;
-  nord13: #ebcb8b;
-  nord14: #a3be8c;
-  nord15: #b48ead;
-
-  foreground: @nord9;
-  backlight: #ccffeedd;
   background-color: transparent;
+  text-color: @fg0;
 
-  highlight: underline bold #eceff4;
-
-  transparent: rgba(46, 52, 64, 0);
+  margin: 0;
+  padding: 0;
+  spacing: 0;
 }
 
 window {
+  background-color: @bg0;
+
   location: center;
-  anchor: center;
-  transparency: "screenshot";
-  padding: 10px;
-  border: 0px;
-  border-radius: 6px;
-
-  background-color: @transparent;
-  spacing: 0;
-  children: [mainbox];
-  orientation: horizontal;
-}
-
-mainbox {
-  spacing: 0;
-  children: [ inputbar, message, listview ];
-}
-
-message {
-  color: @nord0;
-  padding: 5;
-  border-color: @foreground;
-  border: 0px 2px 2px 2px;
-  background-color: @nord7;
+  width: 640;
+  y-offset: -200;
+  border-radius: 8;
 }
 
 inputbar {
-  color: @nord6;
-  padding: 11px;
-  background-color: #3b4252;
-
-  border: 1px;
-  border-radius: 6px 6px 0px 0px;
-  border-color: @nord10;
+  font: "Montserrat 20";
+  padding: 12px;
+  spacing: 12px;
+  children: [ icon-search, entry ];
 }
 
+icon-search {
+  expand: false;
+  filename: "search";
+  size: 28px;
+}
+
+icon-search,
 entry,
-prompt,
-case-indicator {
-  text-font: inherit;
-  text-color: inherit;
+element-icon,
+element-text {
+  vertical-align: 0.5;
 }
 
-prompt {
-  margin: 0px 1em 0em 0em;
+entry {
+  font: inherit;
+
+  placeholder: "Search";
+  placeholder-color: @fg2;
+}
+
+message {
+  border: 2px 0 0;
+  border-color: @bg1;
+  background-color: @bg1;
+}
+
+textbox {
+  padding: 8px 24px;
 }
 
 listview {
-  padding: 8px;
-  border-radius: 0px 0px 6px 6px;
-  border-color: @nord10;
-  border: 0px 1px 1px 1px;
-  background-color: rgba(46, 52, 64, 0.9);
-  dynamic: false;
+  lines: 10;
+  columns: 1;
+
+  fixed-height: false;
+  border: 1px 0 0;
+  border-color: @bg1;
 }
 
 element {
-  padding: 3px;
-  vertical-align: 0.5;
-  border-radius: 4px;
+  padding: 8px 16px;
+  spacing: 16px;
   background-color: transparent;
-  color: @foreground;
-  text-color: rgb(216, 222, 233);
 }
 
-element selected.normal {
-  background-color: @nord7;
-  text-color: #2e3440;
+element normal active {
+  text-color: @bg2;
 }
 
-element-text,
+element selected normal,
+element selected active {
+  background-color: @bg2;
+  text-color: @fg1;
+}
+
 element-icon {
-  background-color: inherit;
+  size: 1em;
+}
+
+element-text {
   text-color: inherit;
-}
-
-button {
-  padding: 6px;
-  color: @foreground;
-  horizontal-align: 0.5;
-
-  border: 2px 0px 2px 2px;
-  border-radius: 4px 0px 0px 4px;
-  border-color: @foreground;
-}
-
-button selected normal {
-  border: 2px 0px 2px 2px;
-  border-color: @foreground;
 }
