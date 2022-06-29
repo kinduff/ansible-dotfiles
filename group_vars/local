@@ -30,10 +30,13 @@ official_packages:
   - lazygit
   - libappindicator-gtk3
   - neofetch
+  - noto-fonts
   - noto-fonts-emoji
   - p7zip
   - redis
+  - ttf-dejavu
   - ttf-fira-code
+  - ttf-liberation
   - unrar
   - unzip
   - wireguard-tools
