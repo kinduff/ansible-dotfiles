@@ -30,6 +30,7 @@
       - 2741  # remove-alt-tab-delay@daase.net
       - 750   # openweather-extension@jenslody.de
       - 5112  # tailscale-status@maxgallup.github.com
+      - 2983  # IP-Finder@linxgem33.com
 
 - name: lineinfile | disable wayland for gdm
   become: true
