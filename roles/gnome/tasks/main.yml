@@ -29,6 +29,7 @@
       - 1040  # randomwallpaper@iflow.space
       - 2741  # remove-alt-tab-delay@daase.net
       - 750   # openweather-extension@jenslody.de
+      - 5112  # tailscale-status@maxgallup.github.com
 
 - name: lineinfile | disable wayland for gdm
   become: true
