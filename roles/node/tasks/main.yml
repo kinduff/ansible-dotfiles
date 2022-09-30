@@ -4,6 +4,11 @@
     url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
     dest: /tmp/nvm-installer.sh
 
+- name: file | change permissions
+  file:
+    dest: /tmp/nvm-installer.sh
+    mode: a+x
+
 - name: command | execute nvm installer
   command: /tmp/nvm-installer.sh
   args:

@@ -6,6 +6,7 @@
     - role: xorg
     - role: gnome
     - role: argos
+    - role: dconf
 
 - name: Set up development environment
   hosts: local

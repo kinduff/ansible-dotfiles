@@ -1,6 +1,6 @@
 # Misc
 dotfiles_user_home: "{{ '~' | expanduser }}"
-dotfiles_home: "{{ dotfiles_user_home }}/dotfiles"
+dotfiles_home: "{{ dotfiles_user_home }}/ansible-dotfiles"
 
 # Meta
 user: "{{ lookup('env', 'USER') }}"
@@ -45,7 +45,6 @@ official_packages:
   - zip
 
 aur_packages:
-  - chrome-gnome-shell
   - insomnia-bin
   - nerd-fonts-hack
   - obsidian

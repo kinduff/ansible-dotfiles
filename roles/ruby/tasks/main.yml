@@ -24,8 +24,13 @@
     url: https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
     dest: /tmp/rvm-installer.sh
 
+- name: file | change permissions
+  file:
+    dest: /tmp/rvm-installer.sh
+    mode: a+x
+
 - name: shell | execute rvm installer
-  command: /tmp/rvm-installer.sh -s stable
+  command: /tmp/rvm-installer.sh
   args:
     creates: "{{ dotfiles_user_home }}/.rvm"
 
