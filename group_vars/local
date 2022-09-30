@@ -29,6 +29,7 @@ official_packages:
   - imagemagick
   - lazygit
   - libappindicator-gtk3
+  - mariadb-libs
   - neofetch
   - noto-fonts
   - noto-fonts-emoji
