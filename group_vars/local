@@ -51,6 +51,7 @@ aur_packages:
   - overmind-bin
   - peek
   - plexamp-appimage
+  - spotify
   - slack-desktop
   - visual-studio-code-bin
   - zoom
