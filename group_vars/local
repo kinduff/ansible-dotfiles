@@ -48,13 +48,14 @@ official_packages:
 
 aur_packages:
   - insomnia-bin
+  - maestral
   - nerd-fonts-hack
   - obsidian
   - overmind-bin
   - peek
   - plexamp-appimage
-  - spotify
   - slack-desktop
+  - spotify
   - visual-studio-code-bin
   - zoom
 
