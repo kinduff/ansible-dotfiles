@@ -25,6 +25,7 @@ official_packages:
   - firefox
   - flatpak
   - gnome-shell-extension-appindicator
+  - go
   - httpie
   - imagemagick
   - lazygit
