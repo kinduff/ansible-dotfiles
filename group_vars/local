@@ -42,6 +42,7 @@ official_packages:
   - ttf-liberation
   - unrar
   - unzip
+  - vlc
   - wireguard-tools
   - xclip
   - youtube-dl
