@@ -1,6 +1,8 @@
 configuration {
-  modi: [drun];
-  combi-modes: "drun";
+  show: "drun";
+  display-drun: "";
+  modi: "drun";
+  combi-modi: "drun";
   show-icons: true;
   display-drun: "";
 }
