@@ -52,6 +52,9 @@ official_packages:
   - zip
   - tcpdump
   - whois
+  - aws-cli
+  - kubectl
+  - kubectx
 
 aur_packages:
   - insomnia-bin
