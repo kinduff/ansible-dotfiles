@@ -50,6 +50,8 @@ official_packages:
   - xclip
   - youtube-dl
   - zip
+  - tcpdump
+  - whois
 
 aur_packages:
   - insomnia-bin
