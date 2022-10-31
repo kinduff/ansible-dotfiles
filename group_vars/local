@@ -18,6 +18,7 @@ base_packages:
   - wget
 
 official_packages:
+  - aws-cli
   - bashtop
   - bitwarden
   - dbeaver
@@ -30,6 +31,8 @@ official_packages:
   - go
   - httpie
   - imagemagick
+  - kubectl
+  - kubectx
   - lazygit
   - libappindicator-gtk3
   - libvips
@@ -40,21 +43,18 @@ official_packages:
   - ntfs-3g
   - p7zip
   - redis
+  - tcpdump
   - ttf-dejavu
   - ttf-fira-code
   - ttf-liberation
   - unrar
   - unzip
   - vlc
+  - whois
   - wireguard-tools
   - xclip
   - youtube-dl
   - zip
-  - tcpdump
-  - whois
-  - aws-cli
-  - kubectl
-  - kubectx
 
 aur_packages:
   - insomnia-bin

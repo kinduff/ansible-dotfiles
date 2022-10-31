@@ -18,6 +18,9 @@ export PATH=$HOME/.local/bin:$PATH
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
+export NPM_GITLAB_TOKEN=glpat-izv-FgWSgjYqoxej5iqs
+export NPM_NPMJS_TOKEN=8d82f5de-c991-4bfb-b686-35ddb12e3ffa
+
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
@@ -34,3 +37,4 @@ export PATH="$PATH:$(yarn global bin)"
 
 BROWSER="firefox"
 EDITOR="code"
+
