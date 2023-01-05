@@ -57,6 +57,7 @@ official_packages:
   - zip
 
 aur_packages:
+  - ccat
   - insomnia-bin
   - maestral
   - nerd-fonts-hack
