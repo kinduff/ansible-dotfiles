@@ -60,7 +60,7 @@ aur_packages:
   - ccat
   - insomnia-bin
   - maestral
-  - nerd-fonts-hack
+  - ttf-hack-nerd
   - obsidian
   - overmind-bin
   - peek
