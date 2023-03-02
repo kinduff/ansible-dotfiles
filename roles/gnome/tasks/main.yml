@@ -23,14 +23,13 @@
       - 1160  # dash-to-panel@jderose9.github.com
       - 1010  # arch-update@RaphaelRochet
       - 615   # appindicatorsupport@rgcjonas.gmail.com
-      - 858   # shell-volume-mixer@derhofbauer.at
       - 19    # user-theme@gnome-shell-extensions.gcampax.github.com
       - 1007  # windowIsReady_Remover@nunofarruca@gmail.com
       - 1040  # randomwallpaper@iflow.space
       - 2741  # remove-alt-tab-delay@daase.net
       - 750   # openweather-extension@jenslody.de
       - 5112  # tailscale-status@maxgallup.github.com
-      - 2983  # IP-Finder@linxgem33.com
+      - 1262  # neffo@bing-wallpaper-gnome-extension
 
 - name: lineinfile | disable wayland for gdm
   become: true
