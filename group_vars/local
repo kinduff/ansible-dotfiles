@@ -41,11 +41,13 @@ official_packages:
   - libvips
   - mariadb-libs
   - neofetch
+  - ngrok
   - noto-fonts
   - noto-fonts-emoji
   - ntfs-3g
   - p7zip
   - redis
+  - rustup
   - tcpdump
   - ttf-dejavu
   - ttf-fira-code
