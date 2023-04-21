@@ -3,7 +3,10 @@ dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/ansible-dotfiles"
 
 # Meta
+full_name: "{{ lookup('env', 'USER_NAME') }}"
 user: "{{ lookup('env', 'USER') }}"
+git_user: "{{ lookup('env', 'GIT_USER') }}"
+git_email: "{{ lookup('env', 'GIT_EMAIL') }}"
 git_signing_key: "{{ lookup('env','GIT_SIGNING_KEY_ID') }}"
 
 # Packages && apps
