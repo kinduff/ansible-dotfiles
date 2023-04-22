@@ -41,7 +41,6 @@ official_packages:
   - libvips
   - mariadb-libs
   - neofetch
-  - ngrok
   - noto-fonts
   - noto-fonts-emoji
   - ntfs-3g
@@ -63,15 +62,19 @@ official_packages:
 
 aur_packages:
   - ccat
+  - gnome-browser-connector
   - insomnia-bin
   - maestral
-  - ttf-hack-nerd
+  - mullvad-vpn-bin
+  - ngrok
   - obsidian
   - overmind-bin
   - peek
   - plexamp-appimage
+  - rbenv
   - slack-desktop
-  - spotify
+  - spotify-launcher
+  - ttf-hack-nerd
   - visual-studio-code-bin
   - zoom
 
