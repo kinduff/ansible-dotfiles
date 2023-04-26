@@ -31,6 +31,7 @@ official_packages:
   - firefox
   - flatpak
   - gnome-shell-extension-appindicator
+  - git-lfs
   - go
   - httpie
   - imagemagick
