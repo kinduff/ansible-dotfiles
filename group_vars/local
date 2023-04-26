@@ -49,6 +49,7 @@ official_packages:
   - p7zip
   - redis
   - rustup
+  - seahorse
   - tcpdump
   - ttf-dejavu
   - ttf-fira-code
