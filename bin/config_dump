@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+dconf dump / > roles/dconf/files/dconf.conf
+
+echo OK

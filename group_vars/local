@@ -80,6 +80,8 @@ aur_packages:
   - ttf-hack-nerd
   - visual-studio-code-bin
   - zoom
+  - matcha-gtk-theme
+  - qogir-icon-theme
 
 # Versions
 node:
