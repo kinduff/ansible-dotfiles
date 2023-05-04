@@ -30,7 +30,6 @@ official_packages:
   - element-desktop
   - firefox
   - flatpak
-  - gnome-shell-extension-appindicator
   - git-lfs
   - go
   - httpie

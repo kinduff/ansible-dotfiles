@@ -10,6 +10,8 @@
     - gnome-control-center
     - gnome-keyring
     - gnome-tweak-tool
+    - gnome-disk-utility
+    - gnome-shell-extension-appindicator
     - nautilus
     - xdg-user-dirs
     - networkmanager
@@ -20,16 +22,16 @@
     name: jaredhocutt.gnome_extensions
   vars:
     gnome_extension_ids:
-      - 1160  # dash-to-panel@jderose9.github.com
-      - 1010  # arch-update@RaphaelRochet
-      - 615   # appindicatorsupport@rgcjonas.gmail.com
-      - 19    # user-theme@gnome-shell-extensions.gcampax.github.com
-      - 1007  # windowIsReady_Remover@nunofarruca@gmail.com
-      - 1040  # randomwallpaper@iflow.space
-      - 2741  # remove-alt-tab-delay@daase.net
-      - 750   # openweather-extension@jenslody.de
-      - 5112  # tailscale-status@maxgallup.github.com
-      - 1262  # neffo@bing-wallpaper-gnome-extension
+      - 1160 # dash-to-panel@jderose9.github.com
+      - 1010 # arch-update@RaphaelRochet
+      - 615 # appindicatorsupport@rgcjonas.gmail.com
+      - 19 # user-theme@gnome-shell-extensions.gcampax.github.com
+      - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
+      - 1040 # randomwallpaper@iflow.space
+      - 2741 # remove-alt-tab-delay@daase.net
+      - 750 # openweather-extension@jenslody.de
+      - 5112 # tailscale-status@maxgallup.github.com
+      - 1262 # neffo@bing-wallpaper-gnome-extension
 
 - name: lineinfile | disable wayland for gdm
   become: true
