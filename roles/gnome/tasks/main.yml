@@ -17,21 +17,30 @@
     - networkmanager
     - gdm
 
-- name: jaredhocutt.gnome_extensions | gnome config
+- name: petermosmans.customize-gnome | gnome extensions
+  tags:
+    - gnome
   include_role:
-    name: jaredhocutt.gnome_extensions
+    name: petermosmans.customize-gnome
   vars:
-    gnome_extension_ids:
-      - 1160 # dash-to-panel@jderose9.github.com
-      - 1010 # arch-update@RaphaelRochet
-      - 615 # appindicatorsupport@rgcjonas.gmail.com
-      - 19 # user-theme@gnome-shell-extensions.gcampax.github.com
-      - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
-      - 1040 # randomwallpaper@iflow.space
-      - 2741 # remove-alt-tab-delay@daase.net
-      - 750 # openweather-extension@jenslody.de
-      - 5112 # tailscale-status@maxgallup.github.com
-      - 1262 # neffo@bing-wallpaper-gnome-extension
+    gnome_extensions:
+      - name: arch-update@RaphaelRochet
+      - name: dash-to-panel@jderose9.github.com
+      - name: shell-volume-mixer@derhofbauer.at
+      - name: windowIsReady_Remover@nunofarruca@gmail.com
+      - name: appindicatorsupport@rgcjonas.gmail.com
+      - name: argos@pew.worldwidemann.com
+      - name: randomwallpaper@iflow.space
+      - name: remove-alt-tab-delay@daase.net
+      - name: tailscale-status@maxgallup.github.com
+      - name: openweather-extension@jenslody.de
+      - name: IP-Finder@linxgem33.com
+      - name: user-theme@gnome-shell-extensions.gcampax.github.com
+      - name: yomun@yahoo.com
+      - name: sound-output-device-chooser@kgshank.net
+      - name: visualizer@sound.org
+      - name: BingWallpaper@ineffable-gmail.com
+      - name: nightthemeswitcher@romainvigier.fr
 
 - name: lineinfile | disable wayland for gdm
   become: true
@@ -69,44 +78,3 @@
   ansible.builtin.systemd:
     name: bluetooth
     enabled: true
-
-- name: file | creates .themes directory
-  ansible.builtin.file:
-    path: "{{ dotfiles_user_home }}/.themes"
-    state: directory
-
-- name: stat | .themes/Nordic
-  stat:
-    path: "{{ dotfiles_user_home }}/.themes/Nordic"
-  register: nordic_stat
-
-- name: unarchive | Nordic theme
-  ansible.builtin.unarchive:
-    src: https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
-    dest: "{{ dotfiles_user_home }}/.themes"
-    remote_src: true
-  when: not nordic_stat.stat.exists
-
-- name: command | rename Nordic folder
-  ansible.builtin.command: "mv {{ dotfiles_user_home }}/.themes/Nordic-master {{ dotfiles_user_home }}/.themes/Nordic"
-  args:
-    creates: "{{ dotfiles_user_home }}/.themes/Nordic"
-  when: not nordic_stat.stat.exists
-
-- name: stat | .local/share/icons/Tela
-  stat:
-    path: "{{ dotfiles_user_home }}/.local/share/icons/Tela"
-  register: tela_stat
-
-- name: unarchive | Tela icons
-  ansible.builtin.unarchive:
-    src: https://github.com/vinceliuice/Tela-icon-theme/archive/refs/heads/master.zip
-    dest: /tmp
-    remote_src: true
-  when: not tela_stat.stat.exists
-
-- name: command | install Tela icons
-  ansible.builtin.command: "sh /tmp/Tela-icon-theme-master/install.sh"
-  args:
-    creates: "{{ dotfiles_user_home }}/.local/share/icons/Tela"
-  when: not tela_stat.stat.exists
