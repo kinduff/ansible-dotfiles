@@ -68,20 +68,20 @@ aur_packages:
   - gnome-browser-connector
   - insomnia-bin
   - maestral
+  - matcha-gtk-theme
   - mullvad-vpn-bin
   - ngrok
   - obsidian
   - overmind-bin
   - peek
   - plexamp-appimage
+  - qogir-icon-theme
   - rbenv
   - slack-desktop
   - spotify-launcher
   - ttf-hack-nerd
   - visual-studio-code-bin
   - zoom
-  - matcha-gtk-theme
-  - qogir-icon-theme
 
 # Versions
 node:
