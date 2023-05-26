@@ -45,6 +45,13 @@
     state: link
     force: true
 
+- name: file | link .secrets file
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/secrets.link"
+    dest: "{{ dotfiles_user_home }}/.secrets"
+    state: link
+    force: true
+
 - name: stat | plugin zsh-syntax-highlighting
   stat:
     path: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
@@ -55,3 +62,14 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
   when: not zsh_syntax_highlighting_stat.stat.exists
+
+- name: stat | plugin wakatime
+  stat:
+    path: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/wakatime"
+  register: zsh_wakatime_stat
+
+- name: git | installs wakatime
+  ansible.builtin.git:
+    repo: https://github.com/sobolevn/wakatime-zsh-plugin.git
+    dest: "{{ dotfiles_user_home }}/.oh-my-zsh/custom/plugins/wakatime"
+  when: not zsh_wakatime_stat.stat.exists

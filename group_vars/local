@@ -42,6 +42,7 @@ official_packages:
   - ntfs-3g
   - openslide
   - p7zip
+  - pavucontrol
   - redis
   - rustup
   - seahorse
@@ -60,6 +61,7 @@ official_packages:
 aur_packages:
   - ccat
   - gnome-browser-connector
+  - heroku-cli
   - matcha-gtk-theme
   - mullvad-vpn-bin
   - ngrok
@@ -89,6 +91,6 @@ flatpak_packages:
 
 # Versions
 node:
-  default_version: 16.13.0
+  default_version: lts/hydrogen
   versions:
-    - 16.13.0
+    - lts/hydrogen
