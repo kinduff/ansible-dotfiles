@@ -6,6 +6,12 @@
     name: rofi
     state: present
 
+- name: file | creates rofi directory
+  file:
+    path: "{{ dotfiles_user_home }}/.config/rofi"
+    state: directory
+    recurse: true
+
 - name: file | link rofi config file
   file:
     src: "{{ dotfiles_home }}/roles/rofi/files/config.rasi.link"
