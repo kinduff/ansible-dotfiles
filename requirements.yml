@@ -4,4 +4,4 @@ collections:
   - name: community.general
 
 roles:
-  - name: petermosmans.customize-gnome
+  - name: jaredhocutt.gnome_extensions

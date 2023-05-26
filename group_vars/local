@@ -24,7 +24,7 @@ official_packages:
   - aws-cli
   - bashtop
   - diff-so-fancy
-  - firefox
+  - firefox-developer-edition
   - flatpak
   - git-lfs
   - go
@@ -61,7 +61,6 @@ official_packages:
 aur_packages:
   - ccat
   - gnome-browser-connector
-  - heroku-cli
   - matcha-gtk-theme
   - mullvad-vpn-bin
   - ngrok
@@ -84,8 +83,6 @@ flatpak_packages:
   - im.riot.Riot
   - io.dbeaver.DBeaverCommunity
   - md.obsidian.Obsidian
-  - org.freedesktop.Platform
-  - org.freedesktop.Platform.Compat.i386
   - rest.insomnia.Insomnia
   - us.zoom.Zoom
 
