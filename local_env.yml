@@ -14,7 +14,7 @@
     - role: ssh
     - role: git
     - role: yay
-    - role: pacman
+    - role: packages
     - role: terminator
     - role: zsh
     - role: rofi
@@ -22,4 +22,3 @@
     - role: ruby
     - role: node
     - role: tailscale
-    - role: postgresql

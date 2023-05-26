@@ -34,3 +34,9 @@ export PATH="$PATH:$(yarn global bin)"
 BROWSER="firefox"
 EDITOR="code"
 
+export FLYCTL_INSTALL="/home/kinduff/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+export OPENAI_API_KEY=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
+
+PGHOST=127.0.0.1

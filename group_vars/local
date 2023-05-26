@@ -23,11 +23,7 @@ base_packages:
 official_packages:
   - aws-cli
   - bashtop
-  - bitwarden
-  - dbeaver
   - diff-so-fancy
-  - discord
-  - element-desktop
   - firefox
   - flatpak
   - git-lfs
@@ -40,7 +36,6 @@ official_packages:
   - libappindicator-gtk3
   - libheif
   - libvips
-  - mariadb-libs
   - neofetch
   - noto-fonts
   - noto-fonts-emoji
@@ -60,28 +55,37 @@ official_packages:
   - whois
   - wireguard-tools
   - xclip
-  - youtube-dl
   - zip
 
 aur_packages:
   - ccat
   - gnome-browser-connector
-  - insomnia-bin
-  - maestral
   - matcha-gtk-theme
   - mullvad-vpn-bin
   - ngrok
-  - obsidian
   - overmind-bin
-  - peek
-  - plexamp-appimage
   - qogir-icon-theme
   - rbenv
-  - slack-desktop
-  - spotify-launcher
   - ttf-hack-nerd
-  - visual-studio-code-bin
-  - zoom
+
+flatpak_packages:
+  - com.discordapp.Discord
+  - com.google.Chrome
+  - com.mattjakeman.ExtensionManager
+  - com.plexamp.Plexamp
+  - com.redis.RedisInsight
+  - com.slack.Slack
+  - com.spotify.Client
+  - com.uploadedlobster.peek
+  - com.valvesoftware.SteamLink
+  - com.visualstudio.code
+  - im.riot.Riot
+  - io.dbeaver.DBeaverCommunity
+  - md.obsidian.Obsidian
+  - org.freedesktop.Platform
+  - org.freedesktop.Platform.Compat.i386
+  - rest.insomnia.Insomnia
+  - us.zoom.Zoom
 
 # Versions
 node:

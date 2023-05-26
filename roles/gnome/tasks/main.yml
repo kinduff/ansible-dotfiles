@@ -17,30 +17,24 @@
     - networkmanager
     - gdm
 
-- name: petermosmans.customize-gnome | gnome extensions
+- name: jaredhocutt.gnome_extensions | gnome extensions
   tags:
     - gnome
   include_role:
-    name: petermosmans.customize-gnome
+    name: jaredhocutt.gnome_extensions
   vars:
-    gnome_extensions:
-      - name: arch-update@RaphaelRochet
-      - name: dash-to-panel@jderose9.github.com
-      - name: shell-volume-mixer@derhofbauer.at
-      - name: windowIsReady_Remover@nunofarruca@gmail.com
-      - name: appindicatorsupport@rgcjonas.gmail.com
-      - name: argos@pew.worldwidemann.com
-      - name: randomwallpaper@iflow.space
-      - name: remove-alt-tab-delay@daase.net
-      - name: tailscale-status@maxgallup.github.com
-      - name: openweather-extension@jenslody.de
-      - name: IP-Finder@linxgem33.com
-      - name: user-theme@gnome-shell-extensions.gcampax.github.com
-      - name: yomun@yahoo.com
-      - name: sound-output-device-chooser@kgshank.net
-      - name: visualizer@sound.org
-      - name: BingWallpaper@ineffable-gmail.com
-      - name: nightthemeswitcher@romainvigier.fr
+    gnome_extension_ids:
+      - 1010 # arch-update@RaphaelRochet
+      - 1160 # dash-to-panel@jderose9.github.com
+      - 858 # shell-volume-mixer@derhofbauer.at
+      - 1007 # windowIsReady_Remover@nunofarruca@gmail.com
+      - 615 # appindicatorsupport@rgcjonas.gmail.com
+      - 2741 # remove-alt-tab-delay@daase.net
+      - 5112 # tailscale-status@maxgallup.github.com
+      - 750 # openweather-extension@jenslody.de
+      - 19 # user-theme@gnome-shell-extensions.gcampax.github.com
+      - 906 # sound-output-device-chooser@kgshank.net
+      - 1262 # BingWallpaper@ineffable-gmail.com
 
 - name: lineinfile | disable wayland for gdm
   become: true

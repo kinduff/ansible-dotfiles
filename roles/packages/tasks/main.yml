@@ -1,4 +1,25 @@
 ---
+- name: pacman | update cache
+  become: true
+  become_user: root
+  community.general.pacman:
+    update_cache: true
+
+- name: pacman | install tools
+  become: true
+  become_user: root
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ official_packages }}"
+
+- name: flatpak | install flatpak packages
+  community.general.flatpak:
+    name: "{{item}}"
+    method: system
+    state: present
+  with_items: "{{ flatpak_packages }}"
+
 - name: Register yay installation status
   ansible.builtin.command: which yay
   changed_when: false
