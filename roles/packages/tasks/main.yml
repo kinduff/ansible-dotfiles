@@ -68,6 +68,11 @@
     state: present
   with_items: "{{ aur_packages }}"
 
+- name: Make sure service has time to start or stop
+  pause:
+    seconds: 15
+  when: not ansible_check_mode
+
 - name: Delete the `aur_builder` user
   become: true
   become_user: root
