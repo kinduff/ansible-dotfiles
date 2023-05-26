@@ -18,8 +18,6 @@
     - gdm
 
 - name: jaredhocutt.gnome_extensions | gnome extensions
-  tags:
-    - gnome
   include_role:
     name: jaredhocutt.gnome_extensions
   vars:
