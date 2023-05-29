@@ -44,6 +44,7 @@ official_packages:
   - openslide
   - p7zip
   - pavucontrol
+  - poppler-glib
   - redis
   - rustup
   - seahorse
@@ -74,6 +75,7 @@ aur_packages:
 flatpak_packages:
   - com.discordapp.Discord
   - com.google.Chrome
+  - com.github.wwmm.easyeffects
   - com.mattjakeman.ExtensionManager
   - com.plexamp.Plexamp
   - com.redis.RedisInsight
