@@ -24,6 +24,7 @@ official_packages:
   - aws-cli
   - bashtop
   - diff-so-fancy
+  - eog
   - firefox-developer-edition
   - flatpak
   - git-lfs
@@ -52,6 +53,7 @@ official_packages:
   - ttf-liberation
   - unrar
   - unzip
+  - usbutils
   - vlc
   - whois
   - wireguard-tools

@@ -36,4 +36,4 @@ EDITOR="code"
 export FLYCTL_INSTALL="/home/kinduff/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
-PGHOST=127.0.0.1
+export PGHOST=127.0.0.1
