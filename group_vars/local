@@ -71,6 +71,7 @@ aur_packages:
   - qogir-icon-theme
   - rbenv
   - ttf-hack-nerd
+  - visual-studio-code-bin
 
 flatpak_packages:
   - com.discordapp.Discord
@@ -83,7 +84,6 @@ flatpak_packages:
   - com.spotify.Client
   - com.uploadedlobster.peek
   - com.valvesoftware.SteamLink
-  - com.visualstudio.code
   - im.riot.Riot
   - io.dbeaver.DBeaverCommunity
   - md.obsidian.Obsidian
