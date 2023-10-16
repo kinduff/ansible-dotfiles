@@ -4,6 +4,8 @@
 [keybindings]
   split_horiz = <Shift><Alt>d
   split_vert = <Alt>d
+  reset = <Primary><Shift><Alt>k
+  reset_clear = <Primary>k
 [profiles]
   [[default]]
     background_color = "#2E3440"
