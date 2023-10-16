@@ -39,6 +39,7 @@ official_packages:
   - libvips
   - neofetch
   - noto-fonts
+  - noto-fonts-cjk
   - noto-fonts-emoji
   - ntfs-3g
   - openslide
